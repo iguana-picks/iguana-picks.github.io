@@ -4,6 +4,7 @@ Prepends item to items.json, copies image into img/, regenerates index.html, com
 Run with no args (or --build) to only rebuild index.html."""
 import json,sys,os,shutil,subprocess,html
 D=os.path.dirname(os.path.abspath(__file__));os.chdir(D)
+os.environ['GH_CONFIG_DIR']='/workspace/gh-iguana/cfg'  # new account iguana-picks (separate from the default jake9901-bot login)
 def build():
     items=json.load(open('items.json'))
     rows=[]
